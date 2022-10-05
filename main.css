@@ -1,0 +1,66 @@
+/*global settings*/
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(245, 233, 233, 0.979);
+}
+
+
+
+/*custom settings*/
+
+.form-area{
+    width: 25rem;
+    margin:3rem auto 0;
+    color: white;
+}
+.form-area>form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.1rem;
+    width:24rem;
+    height: auto;
+    padding: 1.7rem;
+    border-radius:0.3rem;
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);
+    background: linear-gradient(to right, #3f4c6b, #606c88); 
+}
+
+/*style inputs*/
+.input-box{
+    display: flex;
+    flex-direction: column;
+}
+.input-box>input,#gender,#note{
+    padding: 0.3rem;
+    outline: none;
+    border-radius: 0.2rem;
+    border: 1px solid rgb(0, 0, 0);
+}
+.input-box>input:focus,#gender:focus,#note:focus{
+    outline: 2px solid rgba(103, 103, 194, 0.966);
+}
+/*textarea not resizeble*/
+#note{
+    resize: none;
+}
+
+/*submit button*/
+#submit-btn{
+    cursor: pointer;
+    width:30%;
+    margin: 0 auto;
+    background-image: linear-gradient(135deg, #edf2fa 0%, #c3cfe2 100%);
+}
+
+
+
+
+
+
+
