@@ -1,4 +1,4 @@
-/*global settings*/
+/*-=global settings=-*/
 *,*::after,*::before{
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body{
 
 
 
-/*custom settings*/
+/*-=custom settings=-*/
 
 .form-area{
     width: 25rem;
@@ -45,6 +45,13 @@ body{
 .input-box>input:focus,#gender:focus,#note:focus{
     outline: 2px solid rgba(103, 103, 194, 0.966);
 }
+
+.requared{
+    margin-left: 0.2rem;
+    color: red;
+}
+
+
 /*textarea not resizeble*/
 #note{
     resize: none;
@@ -60,7 +67,64 @@ body{
 
 
 
+/*table style*/
+.table-area{
+    margin: 5rem 0;
+}
+
+#submited-info{
+    width: 90%;
+    margin: 0 auto;
+
+}
+#submited-info th{
+    background-color:#606c88;
+    color: rgb(236, 236, 236);
+}
+#submited-info tr:hover{
+    background-color:#ddd ;
+}
+
+#submited-info,th,td{
+    border: 1px solid rgb(201, 200, 200);
+    border-collapse: collapse;
+    text-align: left;
+    padding: 0.3rem;
+}
 
 
+
+/*popup note*/
+.popup-note{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(150, 150, 150, 0.747);
+}
+.popup-note.active{
+    display: block;
+}
+
+.note{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(48, 57, 99);
+    color: #edf2fa;
+}
+
+/*delete btn*/
+.trash{
+    cursor: pointer;
+}
 
 

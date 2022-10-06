@@ -5,26 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    
     <title>Javascript Assigment</title>
 </head>
 <body>  
-    
+    <!--data submit form-->
     <div class="form-area">
-    <form action="">
+    
+    <form id="data-form" onsubmit="event.preventDefault(); validateForm()">
 
         <div class="input-box">
-            <label for="first-name">First Name</label>
+            <label for="first-name">First Name<span class="requared">*</span></label>
             <input type="text" name="first-name" id="first-name">
+            <small id="first-name-validate-text">No digits or special characters allowed</small>
         </div>
 
         <div class="input-box">
-            <label for="last-name">Last Name</label>
+            <label for="last-name">Last Name<span class="requared">*</span></label>
             <input type="text" name="last-name" id="last-name">
+            <small id="last-name-validate-text">No digits or special characters allowed</small>
         </div>
 
         <div class="input-box">
-            <label for="address">Address</label>
+            <label for="address">Address<span class="requared">*</span></label>
             <input type="text" name="address" id="address">
+            <small id="addres-validate-text">Max 35 characters</small>
+            
         </div>
 
         <div class="input-box">
@@ -35,6 +41,7 @@
         <div class="input-box">
             <label for="gender">Gender</label>
             <select name="gender" id="gender">
+                <option value=""></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
@@ -50,6 +57,25 @@
         </div>
     </form>
 </div>
+    <!--table for submited data-->
+    <div class="table-area">
+        <table id="submited-info">
+            <caption>Submited Data</caption>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Addres</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="19" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg></th>
+            </tr>
+            
+        </table>
+    </div>
 
     <script src="main.js"></script>
 </body>
