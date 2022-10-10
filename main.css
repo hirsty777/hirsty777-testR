@@ -96,7 +96,7 @@ body{
 
 /*popup note*/
 .popup-note{
-    display: none;
+    visibility: hidden;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -107,8 +107,8 @@ body{
     background-color: rgba(150, 150, 150, 0.747);
 }
 .popup-note.active{
-    display: block;
-}
+    visibility:visible;
+}  
 
 .note{
     position: absolute;
