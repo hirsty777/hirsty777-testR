@@ -75,7 +75,10 @@ body{
 #submited-info{
     width: 90%;
     margin: 0 auto;
-
+}
+#submited-info>caption{
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 #submited-info th{
     background-color:#606c88;

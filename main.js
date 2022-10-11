@@ -6,7 +6,7 @@ const form=document.getElementById("data-form");
 let uI=0;
 let idCounter=0;
 
-//
+//array oof form submits
 const inputsObject=[];
 
     
@@ -78,12 +78,9 @@ function showInputValues(){
   const gender=document.getElementById('gender');
   const note=document.getElementById('note');
 
-  
-
      
     //push new input values
-     inputsObject.push(
-      {
+     inputsObject.push({
       uI:uI,
       id:idCounter,
       Fname:firstName.value,
@@ -92,13 +89,11 @@ function showInputValues(){
       dateOfBirth:dateOfBirth.value,
       gender:gender.value,
       note:note.value
-      }
-      );
-
+      });
 
     localStorage.setItem('fName',JSON.stringify(inputsObject));
 
-
+    //add from values to html and reset form after submit
     table.innerHTML+=`
     <tr id="${uI}" onclick="showNote(this)">
     <td>${idCounter}</td>
@@ -124,27 +119,30 @@ function showInputValues(){
 };
 
  
-//delete row
+//delete row=============================================
 function deleteRow(th){
-    th.closest('tr').remove();
+  th.closest('tr').remove();
+  //target clicked rows id
+  let currentId=parseInt(th.closest('tr').id);
   
   const enteredObject=localStorage.getItem('fName');
   const parsedenteredObject=JSON.parse(enteredObject);
  
-
-  for(var i=th.closest('tr').id+1; i<parsedenteredObject.length;i++){
+  //
+  for(var i=currentId; i < parsedenteredObject.length;i++){
     parsedenteredObject[i].uI=parsedenteredObject[i].uI-1;
     parsedenteredObject[i].id=parsedenteredObject[i].id-1;
   };
   
-  
+  //delete array based on clicked row id
   parsedenteredObject.splice(th.closest('tr').id,1);
   localStorage.setItem('fName',JSON.stringify(parsedenteredObject));
-  console.log(parsedenteredObject);
   
+  document.location.reload();
+
 };
 
-//add remove active class on note
+//add remove active class on note(popup message)
 function showNote(noteValue){
   noteValue.querySelector('.popup-note').classList.toggle('active');
 };
@@ -153,22 +151,17 @@ function showNote(noteValue){
 
 
 
-
+//on page reload==============
 window.onload=function (){
   const enteredObject=localStorage.getItem('fName');
   const parsedenteredObject=JSON.parse(enteredObject);
 
-  console.log(parsedenteredObject); 
-  
  
   
   for(var i=0; i<parsedenteredObject.length;i++){
-    
     inputsObject.push(parsedenteredObject[i]);
     
     
-
-
     table.innerHTML+=`
     <tr id="${uI}" onclick="showNote(this)">
     <td>${idCounter}</td>
@@ -190,6 +183,5 @@ window.onload=function (){
     uI=parsedenteredObject[i].uI+1;
     idCounter=parsedenteredObject[i].id+1;
   };
-  
 
 };
